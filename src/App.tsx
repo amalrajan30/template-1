@@ -1,4 +1,10 @@
-import { useState, useEffect, useRef, FormEvent } from "react";
+import {
+  useState,
+  useEffect,
+  useRef,
+  type FormEvent,
+  type ReactElement,
+} from "react";
 import {
   Heart,
   Menu,
@@ -23,10 +29,11 @@ import "./App.css";
 // Floating Petals Component
 function FloatingPetals() {
   const petals = ["🌸", "🌺", "💐", "🌷", "✨"];
-  const [petalElements, setPetalElements] = useState<JSX.Element[]>([]);
 
-  useEffect(() => {
-    const elements = Array.from({ length: 15 }, (_, i) => {
+  // Use lazy initial state to generate petals once on mount
+  // This avoids the cascading render caused by setState in useEffect
+  const [petalElements] = useState<ReactElement[]>(() =>
+    Array.from({ length: 15 }, (_, i) => {
       const petal = petals[Math.floor(Math.random() * petals.length)];
       const left = Math.random() * 100;
       const delay = Math.random() * 15;
@@ -45,9 +52,8 @@ function FloatingPetals() {
           {petal}
         </div>
       );
-    });
-    setPetalElements(elements);
-  }, []);
+    })
+  );
 
   return (
     <div className="fixed inset-0 pointer-events-none z-[1] overflow-hidden">
