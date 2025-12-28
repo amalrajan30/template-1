@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join us in celebrating the wedding of Priya & Arjun - December 28, 2024 in Mumbai, India">
+  <title>Priya & Arjun - Wedding Invitation</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Flowbite -->
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.0.0/dist/flowbite.min.js"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  
+  <!-- Custom Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#B8860B', light: '#D4AF37', dark: '#8B6914' },
+            secondary: { DEFAULT: '#8B0000', light: '#A52A2A' },
+            accent: { DEFAULT: '#E8C4B8', light: '#F5E1DA' },
+            muted: { DEFAULT: '#F5EBE0', foreground: '#6B5B4F' },
+            background: '#FDF8F3',
+            foreground: '#2C1810',
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'Georgia', 'serif'],
+            body: ['Outfit', 'sans-serif'],
+            script: ['Dancing Script', 'cursive'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* Base Styles */
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif !important; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', Georgia, serif !important; }
+    .font-script { font-family: 'Dancing Script', cursive !important; }
+    
+    /* Keyframe Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      25%, 75% { transform: scale(1.1); }
+    }
+    @keyframes floatPetal {
+      0% { transform: translateY(-100px) rotate(0deg) translateX(0); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg) translateX(100px); opacity: 0; }
+    }
+    @keyframes shimmer {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.7; }
+    }
+    
+    /* Animation Classes */
+    .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+    .animate-fade-in-left { animation: fadeInLeft 0.8s ease-out forwards; }
+    .animate-fade-in-right { animation: fadeInRight 0.8s ease-out forwards; }
+    .animate-scale-in { animation: scaleIn 0.6s ease-out forwards; }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+    .animate-heartbeat { animation: heartbeat 1.5s ease-in-out infinite; }
+    .animate-shimmer { animation: shimmer 3s ease-in-out infinite; }
+    
+    /* Animation Initial State */
+    .animate-on-scroll { opacity: 0; }
+    .animate-on-scroll.animated { opacity: 1; }
+    
+    /* Petal Animation */
+    .petal {
+      position: absolute;
+      top: -50px;
+      font-size: 1.5rem;
+      animation: floatPetal 15s linear infinite;
+      opacity: 0.6;
+    }
+    
+    /* Nav Link Underline */
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #B8860B;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    
+    /* Pattern Background */
+    .pattern-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #F5EBE0; }
+    ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #B8860B; }
+  </style>
+</head>
+<body class="bg-background text-foreground overflow-x-hidden">
+  
+  <!-- Floating Petals -->
+  <div id="petals" class="fixed inset-0 pointer-events-none z-[1] overflow-hidden"></div>
+  
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-primary-light/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="#" class="flex items-center gap-2 text-primary">
+          <i data-lucide="heart" class="w-6 h-6 animate-heartbeat"></i>
+          <span class="font-heading text-xl font-semibold">P & A</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#home" class="nav-link relative py-2 font-medium hover:text-primary transition-colors">Home</a>
+          <a href="#story" class="nav-link relative py-2 font-medium hover:text-primary transition-colors">Our Story</a>
+          <a href="#events" class="nav-link relative py-2 font-medium hover:text-primary transition-colors">Events</a>
+          <a href="#gallery" class="nav-link relative py-2 font-medium hover:text-primary transition-colors">Gallery</a>
+          <a href="#rsvp" class="inline-flex items-center gap-2 py-2 px-5 bg-gradient-to-r from-primary to-primary-dark text-white font-medium rounded-full shadow-lg shadow-primary/25 hover:scale-105 transition-transform">RSVP</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-foreground hover:text-primary transition-colors">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-background border-t border-primary-light/20">
+      <div class="px-4 py-4 space-y-3">
+        <a href="#home" class="block py-2 hover:text-primary transition-colors">Home</a>
+        <a href="#story" class="block py-2 hover:text-primary transition-colors">Our Story</a>
+        <a href="#events" class="block py-2 hover:text-primary transition-colors">Events</a>
+        <a href="#gallery" class="block py-2 hover:text-primary transition-colors">Gallery</a>
+        <a href="#rsvp" class="block py-2 text-center bg-gradient-to-r from-primary to-primary-dark text-white rounded-full">RSVP</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center relative pt-20 bg-cover bg-center bg-fixed" style="background: linear-gradient(135deg, rgba(253,248,243,0.95), rgba(245,235,224,0.95)), url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80') center/cover fixed;">
+    <!-- Decorative Corners -->
+    <div class="absolute top-24 left-4 md:left-8 text-primary opacity-30">
+      <svg class="w-16 h-16 md:w-24 md:h-24" viewBox="0 0 100 100" fill="currentColor"><path d="M0 0 Q50 0, 50 50 Q50 0, 100 0 L100 10 Q55 10, 50 55 Q45 10, 0 10 Z"/></svg>
+    </div>
+    <div class="absolute top-24 right-4 md:right-8 text-primary opacity-30 scale-x-[-1]">
+      <svg class="w-16 h-16 md:w-24 md:h-24" viewBox="0 0 100 100" fill="currentColor"><path d="M0 0 Q50 0, 50 50 Q50 0, 100 0 L100 10 Q55 10, 50 55 Q45 10, 0 10 Z"/></svg>
+    </div>
+    
+    <div class="text-center px-4 max-w-4xl mx-auto">
+      <p class="font-script text-2xl md:text-3xl text-primary mb-4 opacity-0 animate-fade-in-up" style="animation-delay:200ms;animation-fill-mode:forwards;">✦ We're Getting Married ✦</p>
+      <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl font-semibold mb-6 opacity-0 animate-fade-in-up" style="animation-delay:400ms;animation-fill-mode:forwards;">Priya <span class="text-primary">&</span> Arjun</h1>
+      
+      <div class="flex items-center justify-center gap-4 max-w-xs mx-auto mb-6 opacity-0 animate-fade-in-up" style="animation-delay:500ms;animation-fill-mode:forwards;">
+        <span class="flex-1 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></span>
+        <i data-lucide="heart" class="w-5 h-5 text-primary"></i>
+        <span class="flex-1 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></span>
+      </div>
+      
+      <div class="opacity-0 animate-fade-in-up" style="animation-delay:600ms;animation-fill-mode:forwards;">
+        <p class="text-xl md:text-2xl font-heading mb-2">December 28, 2024</p>
+        <p class="text-lg text-muted-foreground flex items-center justify-center gap-2">
+          <i data-lucide="map-pin" class="w-4 h-4 text-primary"></i>Mumbai, India
+        </p>
+      </div>
+      
+      <!-- Countdown -->
+      <div class="mt-12 opacity-0 animate-scale-in" style="animation-delay:800ms;animation-fill-mode:forwards;">
+        <p class="text-sm uppercase tracking-widest text-muted-foreground mb-4">Counting Down To The Big Day</p>
+        <div class="flex items-center justify-center gap-3 md:gap-6">
+          <div class="bg-gradient-to-br from-white to-background border-2 border-primary-light rounded-xl p-4 md:p-6 min-w-[70px] md:min-w-[90px] shadow-lg">
+            <span id="days" class="block text-3xl md:text-4xl font-heading font-bold text-primary">00</span>
+            <span class="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">Days</span>
+          </div>
+          <span class="text-2xl text-primary animate-pulse">:</span>
+          <div class="bg-gradient-to-br from-white to-background border-2 border-primary-light rounded-xl p-4 md:p-6 min-w-[70px] md:min-w-[90px] shadow-lg">
+            <span id="hours" class="block text-3xl md:text-4xl font-heading font-bold text-primary">00</span>
+            <span class="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">Hours</span>
+          </div>
+          <span class="text-2xl text-primary animate-pulse">:</span>
+          <div class="bg-gradient-to-br from-white to-background border-2 border-primary-light rounded-xl p-4 md:p-6 min-w-[70px] md:min-w-[90px] shadow-lg">
+            <span id="minutes" class="block text-3xl md:text-4xl font-heading font-bold text-primary">00</span>
+            <span class="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">Min</span>
+          </div>
+          <span class="text-2xl text-primary animate-pulse hidden sm:block">:</span>
+          <div class="bg-gradient-to-br from-white to-background border-2 border-primary-light rounded-xl p-4 md:p-6 min-w-[70px] md:min-w-[90px] shadow-lg hidden sm:block">
+            <span id="seconds" class="block text-3xl md:text-4xl font-heading font-bold text-primary">00</span>
+            <span class="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">Sec</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
+        <a href="#story" class="text-primary opacity-60 hover:opacity-100 transition-opacity">
+          <i data-lucide="chevron-down" class="w-8 h-8"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Our Story Section -->
+  <section id="story" class="py-20 md:py-32 pattern-bg relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-16 animate-on-scroll" data-animation="fadeInUp">
+        <p class="font-script text-xl text-primary mb-2">How It All Began</p>
+        <h2 class="font-heading text-4xl md:text-5xl font-semibold">Our Love Story</h2>
+        <div class="flex items-center justify-center gap-4 max-w-xs mx-auto mt-4">
+          <span class="flex-1 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></span>
+          <i data-lucide="sparkles" class="w-5 h-5 text-primary"></i>
+          <span class="flex-1 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></span>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="animate-on-scroll" data-animation="fadeInLeft">
+          <div class="relative">
+            <div class="absolute inset-0 bg-primary/20 rounded-2xl rotate-3"></div>
+            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80" alt="Priya & Arjun" class="relative rounded-2xl shadow-xl w-full h-[400px] md:h-[500px] object-cover">
+            <div class="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-primary rounded-tl-2xl"></div>
+            <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-primary rounded-br-2xl"></div>
+          </div>
+        </div>
+        
+        <div class="animate-on-scroll" data-animation="fadeInRight">
+          <blockquote class="font-script text-2xl md:text-3xl text-primary mb-6 leading-relaxed">"Every love story is beautiful, but ours is my favorite..."</blockquote>
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <p>It all started on a rainy evening in Mumbai, when two souls destined to be together crossed paths at a friend's wedding. Little did we know that a simple conversation over chai would turn into a lifetime of memories.</p>
+            <p>Three years of laughter, adventures, and countless cups of coffee later, Arjun proposed under the starlit sky of Udaipur, and Priya said yes with tears of joy.</p>
+            <p>Now, we invite you to witness the beginning of our forever. Your presence would make our special day even more memorable.</p>
+          </div>
+          <div class="mt-8 flex items-center gap-8 text-center">
+            <div><p class="text-3xl font-heading font-semibold text-primary">2021</p><p class="text-sm text-muted-foreground">First Met</p></div>
+            <div class="flex-1 h-px bg-gradient-to-r from-primary via-accent to-primary"></div>
+            <div><p class="text-3xl font-heading font-semibold text-primary">2023</p><p class="text-sm text-muted-foreground">Got Engaged</p></div>
+            <div class="flex-1 h-px bg-gradient-to-r from-primary via-accent to-primary"></div>
+            <div><p class="text-3xl font-heading font-semibold text-primary">2024</p><p class="text-sm text-muted-foreground">Forever Begins</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Events Section -->
+  <section id="events" class="py-20 md:py-32 bg-muted">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 animate-on-scroll" data-animation="fadeInUp">
+        <p class="font-script text-xl text-primary mb-2">Join Us For</p>
+        <h2 class="font-heading text-4xl md:text-5xl font-semibold">Wedding Events</h2>
+        <div class="flex items-center justify-center gap-4 max-w-xs mx-auto mt-4">
+          <span class="flex-1 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></span>
+          <i data-lucide="calendar-heart" class="w-5 h-5 text-primary"></i>
+          <span class="flex-1 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></span>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Mehndi -->
+        <div class="bg-gradient-to-br from-accent to-accent-light text-foreground rounded-2xl p-8 shadow-lg border border-accent/50 hover:-translate-y-2 transition-transform duration-300 animate-on-scroll" data-animation="fadeInUp" data-delay="0">
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white/50 flex items-center justify-center"><span class="text-3xl">🎨</span></div>
+            <h3 class="font-heading text-2xl font-semibold mb-2">Mehndi</h3>
+            <div class="h-px w-16 mx-auto bg-foreground/20 my-4"></div>
+            <div class="space-y-2 text-sm">
+              <p class="flex items-center justify-center gap-2"><i data-lucide="calendar" class="w-4 h-4"></i>December 26, 2024</p>
+              <p class="flex items-center justify-center gap-2"><i data-lucide="clock" class="w-4 h-4"></i>5:00 PM Onwards</p>
+              <p class="flex items-center justify-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i>Grand Celebration Hall</p>
+            </div>
+            <a href="#" class="inline-flex items-center gap-2 mt-6 py-2 px-4 border-2 border-foreground text-foreground rounded-full text-sm font-medium hover:bg-foreground hover:text-accent transition-colors">
+              <i data-lucide="map" class="w-4 h-4"></i>View Map
+            </a>
+          </div>
+        </div>
+        
+        <!-- Sangeet -->
+        <div class="bg-gradient-to-br from-primary-light to-primary/30 text-foreground rounded-2xl p-8 shadow-lg border border-primary-light/50 hover:-translate-y-2 transition-transform duration-300 animate-on-scroll" data-animation="fadeInUp" data-delay="150">
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white/50 flex items-center justify-center"><span class="text-3xl">🪔</span></div>
+            <h3 class="font-heading text-2xl font-semibold mb-2">Sangeet</h3>
+            <div class="h-px w-16 mx-auto bg-foreground/20 my-4"></div>
+            <div class="space-y-2 text-sm">
+              <p class="flex items-center justify-center gap-2"><i data-lucide="calendar" class="w-4 h-4"></i>December 27, 2024</p>
+              <p class="flex items-center justify-center gap-2"><i data-lucide="clock" class="w-4 h-4"></i>7:00 PM Onwards</p>
+              <p class="flex items-center justify-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i>Taj Ballroom</p>
+            </div>
+            <a href="#" class="inline-flex items-center gap-2 mt-6 py-2 px-4 border-2 border-foreground text-foreground rounded-full text-sm font-medium hover:bg-foreground hover:text-primary-light transition-colors">
+              <i data-lucide="map" class="w-4 h-4"></i>View Map
+            </a>
+          </div>
+        </div>
+        
+        <!-- Wedding -->
+        <div class="bg-gradient-to-br from-secondary to-secondary-light text-white rounded-2xl p-8 shadow-lg border border-secondary/50 hover:-translate-y-2 transition-transform duration-300 animate-on-scroll" data-animation="fadeInUp" data-delay="300">
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center"><span class="text-3xl">💍</span></div>
+            <h3 class="font-heading text-2xl font-semibold mb-2">Wedding Ceremony</h3>
+            <div class="h-px w-16 mx-auto bg-white/30 my-4"></div>
+            <div class="space-y-2 text-sm">
+              <p class="flex items-center justify-center gap-2"><i data-lucide="calendar" class="w-4 h-4"></i>December 28, 2024</p>
+              <p class="flex items-center justify-center gap-2"><i data-lucide="clock" class="w-4 h-4"></i>10:00 AM Onwards</p>
+              <p class="flex items-center justify-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i>Royal Garden Venue</p>
+            </div>
+            <a href="#" class="inline-flex items-center gap-2 mt-6 py-2 px-4 border-2 border-white text-white rounded-full text-sm font-medium hover:bg-white hover:text-secondary transition-colors">
+              <i data-lucide="map" class="w-4 h-4"></i>View Map
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-20 md:py-32 pattern-bg relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-16 animate-on-scroll" data-animation="fadeInUp">
+        <p class="font-script text-xl text-primary mb-2">Captured Moments</p>
+        <h2 class="font-heading text-4xl md:text-5xl font-semibold">Our Gallery</h2>
+        <div class="flex items-center justify-center gap-4 max-w-xs mx-auto mt-4">
+          <span class="flex-1 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></span>
+          <i data-lucide="camera" class="w-5 h-5 text-primary"></i>
+          <span class="flex-1 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></span>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="rounded-xl overflow-hidden shadow-lg hover:scale-105 hover:z-10 transition-transform duration-300 animate-on-scroll" data-animation="scaleIn" data-delay="0">
+          <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=400&q=80" alt="Gallery 1" class="w-full h-48 md:h-64 object-cover">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg row-span-2 hover:scale-105 hover:z-10 transition-transform duration-300 animate-on-scroll" data-animation="scaleIn" data-delay="100">
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&q=80" alt="Gallery 2" class="w-full h-full object-cover min-h-[300px] md:min-h-[420px]">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg hover:scale-105 hover:z-10 transition-transform duration-300 animate-on-scroll" data-animation="scaleIn" data-delay="200">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80" alt="Gallery 3" class="w-full h-48 md:h-64 object-cover">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg hover:scale-105 hover:z-10 transition-transform duration-300 animate-on-scroll" data-animation="scaleIn" data-delay="300">
+          <img src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=400&q=80" alt="Gallery 4" class="w-full h-48 md:h-64 object-cover">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg hover:scale-105 hover:z-10 transition-transform duration-300 animate-on-scroll" data-animation="scaleIn" data-delay="400">
+          <img src="https://images.unsplash.com/photo-1522413452208-996ff3f3e740?w=400&q=80" alt="Gallery 5" class="w-full h-48 md:h-64 object-cover">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg hover:scale-105 hover:z-10 transition-transform duration-300 animate-on-scroll" data-animation="scaleIn" data-delay="500">
+          <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=400&q=80" alt="Gallery 6" class="w-full h-48 md:h-64 object-cover">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg hover:scale-105 hover:z-10 transition-transform duration-300 animate-on-scroll" data-animation="scaleIn" data-delay="600">
+          <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=400&q=80" alt="Gallery 7" class="w-full h-48 md:h-64 object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- RSVP Section -->
+  <section id="rsvp" class="py-20 md:py-32 bg-gradient-to-b from-background to-muted">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 animate-on-scroll" data-animation="fadeInUp">
+        <p class="font-script text-xl text-primary mb-2">Are You Attending?</p>
+        <h2 class="font-heading text-4xl md:text-5xl font-semibold">RSVP</h2>
+        <div class="flex items-center justify-center gap-4 max-w-xs mx-auto mt-4">
+          <span class="flex-1 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></span>
+          <i data-lucide="mail" class="w-5 h-5 text-primary"></i>
+          <span class="flex-1 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></span>
+        </div>
+        <p class="text-muted-foreground mt-4">Kindly respond by December 15, 2024</p>
+      </div>
+      
+      <form id="rsvp-form" class="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-primary-light/20 animate-on-scroll" data-animation="fadeInUp">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block text-sm font-medium mb-2">Your Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your full name" class="w-full px-4 py-3 border-2 border-primary-light/30 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-colors">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium mb-2">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com" class="w-full px-4 py-3 border-2 border-primary-light/30 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-colors">
+          </div>
+        </div>
+        
+        <div class="mt-6">
+          <label class="block text-sm font-medium mb-4">Will you be attending? *</label>
+          <div class="flex flex-wrap gap-4">
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input type="radio" name="attending" value="yes" required class="w-5 h-5 text-primary border-2 border-primary focus:ring-primary">
+              <span class="group-hover:text-primary transition-colors"><i data-lucide="check-circle" class="w-5 h-5 inline mr-1"></i>Joyfully Accept</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input type="radio" name="attending" value="no" class="w-5 h-5 text-primary border-2 border-muted-foreground focus:ring-primary">
+              <span class="group-hover:text-primary transition-colors"><i data-lucide="x-circle" class="w-5 h-5 inline mr-1"></i>Regretfully Decline</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="mt-6">
+          <label for="guests" class="block text-sm font-medium mb-2">Number of Guests</label>
+          <select id="guests" name="guests" class="w-full px-4 py-3 border-2 border-primary-light/30 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-colors">
+            <option value="1">1 Guest</option>
+            <option value="2">2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="5">5+ Guests</option>
+          </select>
+        </div>
+        
+        <div class="mt-6">
+          <label for="message" class="block text-sm font-medium mb-2">Wishes for the Couple (Optional)</label>
+          <textarea id="message" name="message" rows="4" placeholder="Share your blessings and wishes..." class="w-full px-4 py-3 border-2 border-primary-light/30 rounded-xl resize-none focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-colors"></textarea>
+        </div>
+        
+        <div class="mt-8 text-center">
+          <button type="submit" class="inline-flex items-center gap-2 py-3 px-8 bg-gradient-to-r from-primary to-primary-dark text-white font-medium rounded-full shadow-lg shadow-primary/25 hover:scale-105 transition-transform">
+            <i data-lucide="send" class="w-5 h-5"></i>Send RSVP
+          </button>
+        </div>
+      </form>
+      
+      <div class="mt-12 text-center text-muted-foreground animate-on-scroll" data-animation="fadeIn">
+        <p class="mb-4">For any queries, please contact:</p>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+          <a href="tel:+919876543210" class="flex items-center gap-2 hover:text-primary transition-colors"><i data-lucide="phone" class="w-4 h-4"></i>+91 98765 43210</a>
+          <a href="mailto:priya.arjun2024@gmail.com" class="flex items-center gap-2 hover:text-primary transition-colors"><i data-lucide="mail" class="w-4 h-4"></i>priya.arjun2024@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-foreground text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h3 class="font-heading text-3xl md:text-4xl font-semibold mb-4">Priya <span class="text-primary-light">&</span> Arjun</h3>
+      <p class="font-script text-xl text-primary-light mb-8">#PriyaWedsArjun</p>
+      <div class="flex items-center justify-center gap-6 mb-8">
+        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+      <p class="text-white/60 text-sm">Made with <i data-lucide="heart" class="w-4 h-4 inline text-red-400 animate-heartbeat"></i> for our special day</p>
+      <p class="text-white/40 text-xs mt-4">© 2024 Priya & Arjun. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script>
+    lucide.createIcons();
+    
+    // Mobile Menu
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));
+    document.querySelectorAll('#mobile-menu a').forEach(link => link.addEventListener('click', () => document.getElementById('mobile-menu').classList.add('hidden')));
+    
+    // Countdown
+    function updateCountdown() {
+      const diff = new Date('December 28, 2024 10:00:00').getTime() - Date.now();
+      if (diff > 0) {
+        document.getElementById('days').textContent = String(Math.floor(diff / 86400000)).padStart(2, '0');
+        document.getElementById('hours').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+      }
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    
+    // Scroll Animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('animated', `animate-${entry.target.dataset.animation}`);
+            entry.target.style.animationFillMode = 'forwards';
+          }, entry.target.dataset.delay || 0);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    
+    // Petals
+    const petals = ['🌸', '🌺', '💐', '🌷', '✨'];
+    for (let i = 0; i < 15; i++) {
+      const petal = document.createElement('div');
+      petal.className = 'petal';
+      petal.textContent = petals[Math.floor(Math.random() * petals.length)];
+      petal.style.left = Math.random() * 100 + '%';
+      petal.style.animationDelay = Math.random() * 15 + 's';
+      petal.style.animationDuration = (15 + Math.random() * 10) + 's';
+      document.getElementById('petals').appendChild(petal);
+    }
+    
+    // Form
+    document.getElementById('rsvp-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<svg class="animate-spin w-5 h-5" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Sending...';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.innerHTML = '<i data-lucide="check" class="w-5 h-5"></i> RSVP Sent!';
+        btn.classList.add('!bg-green-600');
+        lucide.createIcons();
+        setTimeout(() => { e.target.reset(); btn.innerHTML = orig; btn.classList.remove('!bg-green-600'); btn.disabled = false; lucide.createIcons(); }, 3000);
+      }, 2000);
+    });
+    
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', (e) => { e.preventDefault(); document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' }); }));
+    
+    // Navbar scroll
+    window.addEventListener('scroll', () => document.querySelector('nav').classList.toggle('shadow-md', window.scrollY > 50));
+  </script>
+</body>
+</html>
