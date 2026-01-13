@@ -3,7 +3,6 @@ import {
   useEffect,
   useRef,
   type FormEvent,
-  type ReactElement,
 } from "react";
 import {
   Heart,
@@ -25,42 +24,6 @@ import {
   Instagram,
 } from "lucide-react";
 import "./App.css";
-
-// Floating Petals Component
-function FloatingPetals() {
-  const petals = ["🌸", "🌺", "💐", "🌷", "✨"];
-
-  // Use lazy initial state to generate petals once on mount
-  // This avoids the cascading render caused by setState in useEffect
-  const [petalElements] = useState<ReactElement[]>(() =>
-    Array.from({ length: 15 }, (_, i) => {
-      const petal = petals[Math.floor(Math.random() * petals.length)];
-      const left = Math.random() * 100;
-      const delay = Math.random() * 15;
-      const duration = 15 + Math.random() * 10;
-
-      return (
-        <div
-          key={i}
-          className="petal"
-          style={{
-            left: `${left}%`,
-            animationDelay: `${delay}s`,
-            animationDuration: `${duration}s`,
-          }}
-        >
-          {petal}
-        </div>
-      );
-    })
-  );
-
-  return (
-    <div className="fixed inset-0 pointer-events-none z-[1] overflow-hidden">
-      {petalElements}
-    </div>
-  );
-}
 
 // Navigation Component
 function Navigation() {
@@ -967,7 +930,6 @@ function Footer() {
 function App() {
   return (
     <div className="bg-background text-foreground overflow-x-hidden">
-      <FloatingPetals />
       <Navigation />
       <HeroSection />
       <StorySection />
